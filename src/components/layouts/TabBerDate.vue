@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import TabBar from '@/components/TabBar'
+import TabBar from './TabBar'
 export default {
   name: 'AppLayout',
   data() {
@@ -24,12 +24,33 @@ export default {
           to: {
             name: 'Home'
           },
-          icon: 'home-o'
+          icon: 'wap-home-o'
         },
         {
-          title: '关于我',
+          title: '分类',
           to: {
-            name: 'About'
+            name: 'Sort'
+          },
+          icon: 'bars'
+        },
+        {
+          title: '识物',
+          to: {
+            name: 'Topic'
+          },
+          icon: 'photo'
+        },
+        {
+          title: '购物车',
+          to: {
+            name: 'Cart'
+          },
+          icon: 'cart-o'
+        },
+        {
+          title: '个人',
+          to: {
+            name: 'User'
           },
           icon: 'user-o'
         }

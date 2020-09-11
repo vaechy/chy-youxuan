@@ -2,16 +2,17 @@
 <template>
   <div class="index-container">
     <div class="warpper">
-      <h1 class="demo-home__title"><img src="https://imgs.solui.cn/weapp/logo.png" /><span> VUE H5开发模板</span></h1>
-      <h2 class="demo-home__desc">
-        A vue h5 template with Vant UI
-      </h2>
+      <TopHeader />
+      <TopBanner />
+      <SwiperBanner />
     </div>
-    <van-cell icon="success" v-for="item in list" :key="item" :title="item" />
   </div>
 </template>
 
 <script>
+import TopHeader from '@/components/layouts/TopHeader'
+import TopBanner from '@/components/common/TopBanner'
+import SwiperBanner from '@/components/common/SwiperBanner'
 export default {
   data() {
     return {
@@ -36,10 +37,14 @@ export default {
       ]
     }
   },
-
+  components: {
+    TopHeader,
+    TopBanner,
+    SwiperBanner
+  },
   computed: {},
 
-  mounted() { },
+  mounted() {},
 
   methods: {}
 }
@@ -47,7 +52,7 @@ export default {
 <style lang="scss" scoped>
 .index-container {
   .warpper {
-    padding: 12px;
+    // padding: 12px;
     background: #fff;
     .demo-home__title {
       margin: 0 0 6px;
