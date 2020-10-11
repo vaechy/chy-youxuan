@@ -5,13 +5,13 @@
         <swiper-slide
           v-for="(item, index) in topNavOptions"
           :key="index"
-          :class="{'top-nav-item': true, active: navSelected == index}"
+          :class="{ 'top-nav-item': true, active: navSelected == index }"
         >
-          <router-link :to="index == 0 ? '/' : `/item/${index}`">{{item.name}}</router-link>
+          <router-link :to="index == 0 ? '/' : `/item/${index}`">{{ item.name }}</router-link>
         </swiper-slide>
       </swiper>
     </div>
-    <div :class="{dropNavWrap: true, showCateDropdown}">
+    <div :class="{ dropNavWrap: true, showCateDropdown }">
       <!-- <div class="shadowMask"></div> -->
       <div class="dropIcon" @click="handleToggleNav">
         <van-icon name="arrow-down" />
@@ -22,9 +22,10 @@
       <span
         v-for="(item, index) in topNavOptions"
         :key="index"
-        :class="{'cateTag': true, active: navSelected == index}"
+        :class="{ cateTag: true, active: navSelected == index }"
         @click="handleSkipTag(index)"
-      >{{item.name}}</span>
+        >{{ item.name }}</span
+      >
     </div>
     <div v-show="showCateDropdown" class="cateMask" @click="handleToggleNav"></div>
   </section>
@@ -36,7 +37,6 @@ import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
 // import 'swiper/css/swiper.css'
 // If you use Swiper 6.0.0 or higher
 import 'swiper/swiper-bundle.css'
-
 export default {
   name: 'TopBanner',
   components: {
@@ -97,7 +97,7 @@ export default {
     line-height: 30px;
     padding-right: 60px;
     padding-left: 15px;
-    border-bottom: 0.1px solid gray;
+    border-bottom: 0.04px solid gray;
     .top-nav-item.swiper-slide {
       display: inline-block;
       font-size: 14px;
@@ -136,7 +136,7 @@ export default {
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 12;
+    z-index: 2;
     .shadowMask {
       // @include block(30px, 30px);
       display: block;
@@ -172,7 +172,7 @@ export default {
     background-color: #ffffff;
     position: absolute;
     top: 0;
-    z-index: 2;
+    z-index: 1;
     display: flex;
     flex-flow: row wrap;
     span {
@@ -199,6 +199,15 @@ export default {
       width: 100%;
       // background-color: orangered;
     }
+  }
+  .cateMask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
   }
 }
 </style>

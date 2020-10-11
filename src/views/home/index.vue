@@ -1,18 +1,22 @@
 <!-- home -->
 <template>
-  <div class="index-container">
+  <section class="index-container">
     <div class="warpper">
-      <TopHeader />
-      <TopBanner />
+      <Header />
       <SwiperBanner />
+      <!-- 频道直达 -->
+      <ShoppingChannle />
+      <!-- 新人活动 -->
+      <Newcomer />
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
-import TopHeader from '@/components/layouts/TopHeader'
-import TopBanner from '@/components/common/TopBanner'
+import Header from '@/components/common/Header'
 import SwiperBanner from '@/components/common/SwiperBanner'
+import ShoppingChannle from './ShoppingChannle'
+import Newcomer from './Newcomer'
 export default {
   data() {
     return {
@@ -38,9 +42,10 @@ export default {
     }
   },
   components: {
-    TopHeader,
-    TopBanner,
-    SwiperBanner
+    Header,
+    SwiperBanner,
+    ShoppingChannle,
+    Newcomer
   },
   computed: {},
 
@@ -51,6 +56,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .index-container {
+  height: 1500px;
   .warpper {
     // padding: 12px;
     background: #fff;

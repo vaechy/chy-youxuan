@@ -19,6 +19,7 @@ export default {
 
 <style lang="scss" scoped>
 header {
+  background-color: $white;
   padding: 7px 14px;
   display: flex;
   flex-flow: row nowrap;

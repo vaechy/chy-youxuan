@@ -1,6 +1,7 @@
 import api from '@/api/home'
 const state = {
   BannerData: [],
+  ChannelsList: [],
   topNavOptions: [
     {
       name: '推荐',
@@ -46,17 +47,29 @@ const mutations = {
     // return axios.get(uri)
     // console.log('home')
     state.BannerData = data
+  },
+  setChannelsList(state, data) {
+    state.ChannelsList = data
   }
 }
 const actions = {
   getBannerData({ commit }) {
-    commit('setBannerData')
-    api.getBannerData(function (data) { commit('setBannerData', data) })
+    api.getBannerData(data => {
+      commit('setBannerData', data)
+    })
+  },
+  getChannelsList({ commit }) {
+    api.getChannelsList(data => {
+      commit('setChannelsList', data)
+    })
   }
 }
 const getters = {
   BannerData: state => {
     return state.BannerData
+  },
+  ChannelsList: state => {
+    return state.ChannelsList
   }
 }
 

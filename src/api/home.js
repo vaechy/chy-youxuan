@@ -3,11 +3,18 @@
 // import request from '@/utils/request'
 // home api
 import axios from 'axios'
-const getBannerData = function (getBannerData) {
-  axios.get('http://127.0.0.1:8000/GetBannerData/getData').then(res => {
+
+function getBannerData(getBannerData) {
+  axios.get('http://192.168.1.10:3000/banner').then(res => {
     getBannerData(res)
   })
 }
+function getChannelsList(getChannelsList) {
+  axios.get('http://192.168.1.10:3000/indexPage/channels').then(res => {
+    getChannelsList(res)
+  })
+}
 export default {
-  getBannerData
+  getBannerData,
+  getChannelsList
 }
