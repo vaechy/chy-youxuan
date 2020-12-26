@@ -5,11 +5,20 @@
         <swiper-slide
           v-for="(item, index) in topNavOptions"
           :key="index"
+          :class="{'top-nav-item': true, active: navSelected == index}"
+        >
+          <router-link :to="index == 0 ? '/' : `/item/${index}`">{{item.name}}</router-link>
+        </swiper-slide>
+      </swiper>
+      <!-- <swiper :options="swiperOption">
+        <swiper-slide
+          v-for="(item, index) in topNavOptions"
+          :key="index"
           :class="{ 'top-nav-item': true, active: navSelected == index }"
         >
           <router-link :to="index == 0 ? '/' : `/item/${index}`">{{ item.name }}</router-link>
         </swiper-slide>
-      </swiper>
+      </swiper> -->
     </div>
     <div :class="{ dropNavWrap: true, showCateDropdown }">
       <!-- <div class="shadowMask"></div> -->
@@ -33,16 +42,12 @@
 
 <script>
 import { mapState } from 'vuex'
-import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
 // import 'swiper/css/swiper.css'
 // If you use Swiper 6.0.0 or higher
 import 'swiper/swiper-bundle.css'
 export default {
   name: 'TopBanner',
-  components: {
-    Swiper,
-    SwiperSlide
-  },
+  components: {},
   computed: {
     ...mapState({
       topNavOptions: state => state.home.topNavOptions
@@ -60,14 +65,11 @@ export default {
       navSelected
     }
   },
-  directives: {
-    swiper: directive
-  },
   created() {
-    console.log(this.$route.params)
+    // console.log(this.$route)
   },
   updated() {
-    console.log(this.$route.params.index)
+    // console.log(this.$route.params.index)
   },
   watch: {
     $route(to, from) {

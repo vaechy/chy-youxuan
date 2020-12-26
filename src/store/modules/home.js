@@ -2,6 +2,10 @@ import api from '@/api/home'
 const state = {
   BannerData: [],
   ChannelsList: [],
+  hotProduct: {},
+  endemic: {},
+  arrival: [],
+  goods: {},
   topNavOptions: [
     {
       name: '推荐',
@@ -50,8 +54,21 @@ const mutations = {
   },
   setChannelsList(state, data) {
     state.ChannelsList = data
+  },
+  setHotProduct(state, data) {
+    state.hotProduct = data
+  },
+  setEndemic(state, data) {
+    state.endemic = data
+  },
+  setArrival(state, data) {
+    state.arrival = data
+  },
+  setGoods(state, data) {
+    state.goods = data
   }
 }
+
 const actions = {
   getBannerData({ commit }) {
     api.getBannerData(data => {
@@ -62,14 +79,47 @@ const actions = {
     api.getChannelsList(data => {
       commit('setChannelsList', data)
     })
+  },
+  getHotProduct({ commit }) {
+    api.getHotProduct(data => {
+      commit('setHotProduct', data)
+    })
+  },
+  getEndemic({ commit }) {
+    api.getEndemic(data => {
+      commit('setEndemic', data)
+    })
+  },
+  getArrival({ commit }) {
+    api.getArrival(data => {
+      commit('setArrival', data)
+    })
+  },
+  getGoods({ commit }) {
+    api.getGoods(data => {
+      commit('setGoods', data)
+    })
   }
 }
+
 const getters = {
   BannerData: state => {
     return state.BannerData
   },
   ChannelsList: state => {
     return state.ChannelsList
+  },
+  hotProduct: state => {
+    return state.hotProduct
+  },
+  endemic: state => {
+    return state.endemic
+  },
+  arrival: state => {
+    return state.arrival
+  },
+  goods: state => {
+    return state.goods
   }
 }
 

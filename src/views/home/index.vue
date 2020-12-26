@@ -8,15 +8,36 @@
       <ShoppingChannle />
       <!-- 新人活动 -->
       <Newcomer />
+      <!-- 品牌 -->
+      <BrandSales />
+      <!-- 热销 -->
+      <HotSales />
+      <!-- 人气 -->
+      <Endemic/>
+      <!-- 新品 -->
+      <NewSales/>
+      <!-- 多商品展示 -->
+      <Goods
+        v-for="(item,index) in goods"
+        :key="index"
+        :categoryData="item"
+      >
+      </Goods>
     </div>
   </section>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import Header from '@/components/common/Header'
 import SwiperBanner from '@/components/common/SwiperBanner'
 import ShoppingChannle from './ShoppingChannle'
 import Newcomer from './Newcomer'
+import BrandSales from './BrandSales'
+import HotSales from './HotSales'
+import Endemic from './Endemic'
+import NewSales from './NewSales'
+import Goods from '@/components/common/CategoryGoodsBlock'
 export default {
   data() {
     return {
@@ -45,21 +66,32 @@ export default {
     Header,
     SwiperBanner,
     ShoppingChannle,
-    Newcomer
+    Newcomer,
+    BrandSales,
+    HotSales,
+    Endemic,
+    NewSales,
+    Goods
   },
-  computed: {},
+  computed: {
+    ...mapGetters(['goods'])
+  },
 
   mounted() {},
 
-  methods: {}
+  methods: {},
+
+  created() {
+    this.$store.dispatch('getGoods')
+  }
 }
 </script>
 <style lang="scss" scoped>
 .index-container {
+  background-color:$grey;
   height: 1500px;
   .warpper {
     // padding: 12px;
-    background: #fff;
     .demo-home__title {
       margin: 0 0 6px;
       font-size: 32px;

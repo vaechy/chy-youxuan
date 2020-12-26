@@ -14,6 +14,7 @@ export default {
 
 <style lang="scss" scoped>
 .g-grow {
+  background-color: $white;
   padding: 0 15px;
   display: flex;
   height: 36px;

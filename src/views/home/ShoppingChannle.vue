@@ -30,23 +30,26 @@ export default {
 
 <style lang="scss" scoped>
 .shoppingChannle{
+  background-color: $white;
   display: flex;
   flex-flow: row wrap;
-  align-content:center
-}
-.shoppingChannle  li {
+  align-content:center;
+
+li{
   text-align: center;
   // display: block;
   padding-bottom:4px;
   flex: 0 0 75px;
 }
-.shoppingChannle img{
+img{
   width: 55px;
   height: 55px;
 }
-.shoppingChannle span{
+span{
   display: block;
   font-size: 13px;
   margin-top: 4px;
 }
+}
+
 </style>

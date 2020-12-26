@@ -47,6 +47,11 @@ export const constantRouterMap = [
         name: 'User',
         component: () => import('@/views/user/index'),
         meta: { title: '个人', keepAlive: false }
+      },
+      {
+        path: '/manufacturer/:id',
+        name: 'Manufacturer',
+        component: () => import('@/views/manufacturer')
       }
     ]
   }

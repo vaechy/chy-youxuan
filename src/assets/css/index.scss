@@ -1,6 +1,9 @@
 @import './variables.scss';
 @import './mixin.scss';
-
+* {
+  margin: 0;
+  padding: 0;
+}
 html,
 body .app {
   color: #333333;

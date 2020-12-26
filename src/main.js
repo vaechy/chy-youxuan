@@ -19,6 +19,13 @@ import '@/assets/css/index.scss'
 // 移动端适配
 import 'lib-flexible/flexible.js'
 
+// 引入插件
+
+// 使用swiper awesome swiper插件
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+// import style
+import 'swiper/swiper-bundle.css'
+Vue.use(VueAwesomeSwiper, /* { default options with global component } */)
 // filters
 import './filters'
 Vue.config.productionTip = false
