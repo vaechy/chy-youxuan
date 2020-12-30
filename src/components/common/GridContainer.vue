@@ -23,7 +23,7 @@ export default {
 <style lang="scss" scoped>
 .show-container{
   padding:0 14px;
-  margin: 10px 0 50px 0;
+  margin: 10px 0 10px 0;
   overflow: hidden;
   background-color: $white;
   .container-title{

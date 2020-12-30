@@ -5,7 +5,7 @@ const state = {
   hotProduct: {},
   endemic: {},
   arrival: [],
-  goods: {},
+  goods: [],
   topNavOptions: [
     {
       name: '推荐',

@@ -6,12 +6,12 @@ import axios from 'axios'
 
 function getBannerData(getBannerData) {
   axios.get('http://10.10.10.158:3000/banner').then(res => {
-    getBannerData(res)
+    getBannerData(res.data)
   })
 }
 function getChannelsList(getChannelsList) {
   axios.get('http://10.10.10.158:3000/indexPage/channels').then(res => {
-    getChannelsList(res)
+    getChannelsList(res.data)
   })
 }
 function getHotProduct(getHotProduct) {

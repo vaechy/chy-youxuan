@@ -92,7 +92,8 @@ padding: 0px 15px 15px;
   }
 }
 .content{
-  width: 375px;
+  // width: 375px;
+  width: 100%;
   height: 82%;
   overflow: hidden;
   .pic-new{

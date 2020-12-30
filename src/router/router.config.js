@@ -21,8 +21,8 @@ export const constantRouterMap = [
       },
       {
         path: '/item/:index',
-        name: 'items',
-        component: () => import('@/views/home/items')
+        name: 'Items',
+        component: () => import('@/views/items/Items')
       },
       {
         path: '/sort',

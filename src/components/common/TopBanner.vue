@@ -10,15 +10,6 @@
           <router-link :to="index == 0 ? '/' : `/item/${index}`">{{item.name}}</router-link>
         </swiper-slide>
       </swiper>
-      <!-- <swiper :options="swiperOption">
-        <swiper-slide
-          v-for="(item, index) in topNavOptions"
-          :key="index"
-          :class="{ 'top-nav-item': true, active: navSelected == index }"
-        >
-          <router-link :to="index == 0 ? '/' : `/item/${index}`">{{ item.name }}</router-link>
-        </swiper-slide>
-      </swiper> -->
     </div>
     <div :class="{ dropNavWrap: true, showCateDropdown }">
       <!-- <div class="shadowMask"></div> -->
@@ -92,7 +83,7 @@ export default {
 .top-nav {
   // opacity: 0;
   background: white;
-
+  width: 100%;
   position: relative;
   .top-nav-list {
     height: 30px;

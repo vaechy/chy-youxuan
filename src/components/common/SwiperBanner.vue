@@ -1,7 +1,7 @@
 <template>
-  <section>
+  <section class="swiper-banner">
     <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
-      <van-swipe-item v-for="(item, index) in BannerData.data" :key="index">
+      <van-swipe-item v-for="(item, index) in BannerData" :key="index">
         <img :src="item.src" alt="" />
       </van-swipe-item>
     </van-swipe>
@@ -24,6 +24,9 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.swiper-banner{
+  overflow: hidden;
+}
 .boc {
   width: 100%;
   height: 80px;

@@ -2,7 +2,7 @@
   <section>
     <ServicePolicy />
       <ul class="shoppingChannle">
-        <li v-for="(item,key) in ChannelsList.data" :key="key"><img  v-lazy="item.picUrl" alt=""><span>{{item.name}}</span></li>
+        <li v-for="(item,key) in ChannelsList" :key="key"><img  v-lazy="item.picUrl" alt=""><span>{{item.name}}</span></li>
       </ul>
   </section>
 </template>

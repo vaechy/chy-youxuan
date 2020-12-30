@@ -90,6 +90,7 @@ export default {
 .index-container {
   background-color:$grey;
   height: 1500px;
+  margin-bottom:45px;
   .warpper {
     // padding: 12px;
     .demo-home__title {
