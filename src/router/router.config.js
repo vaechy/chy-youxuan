@@ -54,5 +54,9 @@ export const constantRouterMap = [
         component: () => import('@/views/manufacturer')
       }
     ]
+  }, {
+    path: '/search',
+    name: 'search',
+    component: () => import('@/components/common/VantSearch')
   }
 ]

@@ -53,17 +53,18 @@ module.exports = {
       errors: true
     },
     // before: require('./mock/index.js')
-    // proxy: {
-    //   //配置跨域
-    //   '/api': {
-    //       target: "https://test.xxx.com",
-    //       // ws:true,
-    //       changOrigin:true,
-    //       pathRewrite:{
-    //           '^/api':'/'
-    //       }
-    //   }
-    // }
+    proxy: {
+      // 配置跨域
+      '/api': {
+        target: 'http://192.168.1.10:30000',
+        // ws:true,
+        changOrigin: true,
+        // logLevel: 'debug' //打印请求日志
+        pathRewrite: {
+          '^/api': '/'
+        }
+      }
+    },
     disableHostCheck: true // Invalid Host header
   },
   css: {

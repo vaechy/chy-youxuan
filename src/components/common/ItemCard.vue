@@ -4,17 +4,25 @@
         <img v-lazy="cardData.picUrl" alt="">
       </div>
       <div class="card-desc">{{cardData.desc}}</div>
-      <div>{{cardData.discount}}</div>
-      <div>{{cardData.price}}</div>
+      <span class="card-price">￥{{cardData.price}} </span>
+      <span v-if="cardData.discount" class="card-discount">￥{{cardData.discount}}</span>
       <div>{{cardData.sub_title}}</div>
-      <div>{{cardData.tag}}</div>
+      <ProductTag
+        v-if="cardData.tag"
+        :tag="cardData.tag"
+      />
       <div>{{cardData.title}}</div>
+      <button @click="fn">加入购物车</button>
   </div>
 </template>
 
 <script>
+import ProductTag from './ProductTag'
 export default {
   name: 'ItemCard',
+  components: {
+    ProductTag
+  },
   props: {
     cardData: {
       type: Object,
@@ -26,11 +34,16 @@ export default {
           price: '',
           spec: '',
           sub_title: '',
-          tag: '',
+          tag: 'test',
           title: ''
         }
       }
 
+    }
+  },
+  methods: {
+    fn() {
+      Toast()
     }
   }
 }
@@ -51,6 +64,13 @@ export default {
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
+      }
+      .card-price{
+        color: #b4282d;
+      }
+      .card-discount{
+        color: #999;
+        text-decoration: line-through;
       }
       img{
         width: 172px;
