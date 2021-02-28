@@ -4,13 +4,13 @@
   more='#11'
 >
       <ul class="hot-list">
-        <li class="top" v-for="(item,key) in hotProduct.hot" :key="key">
+        <!-- <li class="top" v-for="(item,key) in hotProduct.hot" :key="key">
           <div class="name"><span>{{item.name}}</span></div>
           <div class="picWrap">
             <img v-lazy="item.picUrl">
           </div>
-        </li>
-        <li class="item" v-for="(item,key) in hotProduct.ranks" :key="'ranks'+key">
+        </li> -->
+        <li class="item" v-for="(item,key) in hotProduct" :key="'ranks'+key">
           <div class="name">{{item.name}}</div>
           <div class="picWrap">
             <img v-lazy="item.picUrl">
@@ -40,14 +40,29 @@ export default {
 <style lang="scss" scoped>
 .hot-list{
   li{
-    // width: 100px;
     height: 100px;
     background-color: #F9F3E4;
     float: left;
-    &:nth-child(2){
-      background-color: #EBEFF6;
+     &.item:nth-child(n+3){
+      background-color: #f5f5f5;
+      width: 25%;
+      height: 90px;
+      .name{
+        margin-top: 12px;;
+        text-align: center;
+      }
+      .picWrap{
+        position: relative;
+        text-align: center;
+        img{
+          width: 60px;
+          height: 60px;
+          margin: 0 auto;
+        }
+      }
     }
-    &.top{
+    &:nth-child(-n+2){
+      background-color: #EBEFF6;
       width: 50%;
       position: relative;
       .name{
@@ -70,24 +85,6 @@ export default {
         height: 100px;
         top: 0;
         right: 0;
-      }
-    }
-     &.item{
-      background-color: #f5f5f5;
-      width: 25%;
-      height: 90px;
-      .name{
-        margin-top: 12px;;
-        text-align: center;
-      }
-      .picWrap{
-        position: relative;
-        text-align: center;
-        img{
-          width: 60px;
-          height: 60px;
-          margin: 0 auto;
-        }
       }
     }
   }

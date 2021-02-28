@@ -4,19 +4,18 @@
    more='#11'
   >
   <ul class="endemic-container">
-    <!-- <li>{{endemic}}</li> -->
-    <li v-if="endemic.main_d">
+    <li v-if="endemiFore">
       <div class="big_pic">
-        <img v-lazy="endemic.main_d.picUrl">
+        <img v-lazy="endemiFore.picUrl">
       </div>
       <div class="big_info">
-        <p class="title">{{endemic.main_d.title}}</p>
-        <p class="sub_title">{{endemic.main_d.sub_title}}</p>
-        <p class="price">{{endemic.main_d.price}}</p>
+        <p class="title">{{endemiFore.title}}</p>
+        <p class="sub_title">{{endemiFore.sub_title}}</p>
+        <p class="price">{{endemiFore.price}}</p>
       </div>
 
     </li>
-    <li class="yx-card" v-for="(item,key) in endemic.sub_d" :key="key">
+    <li class="yx-card" v-for="(item,key) in endemiList" :key="key">
       <div class="pic">
         <img v-lazy="item.picUrl" >
       </div>
@@ -35,13 +34,14 @@ export default {
     GridContainer
   },
   computed: {
-    ...mapGetters(['endemic'])
+    ...mapGetters(['endemiFore', 'endemiList'])
   },
   created() {
     this.$store.dispatch('getEndemic')
   },
   mounted() {
-    console.dir(this.$store.getters)
+    console.log(this.$store.getters)
+    console.log(this.$store.getters['endemic'])
   }
 }
 </script>

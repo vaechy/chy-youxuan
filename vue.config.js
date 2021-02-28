@@ -56,7 +56,7 @@ module.exports = {
     proxy: {
       // 配置跨域
       '/api': {
-        target: 'http://192.168.1.10:30000',
+        target: 'http://192.168.1.3:30000',
         // ws:true,
         changOrigin: true,
         // logLevel: 'debug' //打印请求日志

@@ -3,8 +3,8 @@
 */
 <template>
   <section class="yx-category">
-    <div class="category-head" v-if="categoryData.main">
-      <img v-lazy="categoryData.main.picUrl" alt="">
+    <div class="category-head" v-if="categoryData.picUrl">
+      <img v-lazy="categoryData.picUrl" alt="">
     </div>
     <div class="category-list">
       <swiper :options="swiperOption" ref="mySwiper">

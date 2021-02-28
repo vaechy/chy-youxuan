@@ -1,13 +1,21 @@
 <template>
-  <div>
-    <router-link >跳转</router-link>
-    <div>{{nodeEvn}}</div>
-    <div>{{vueEvn}}</div>
+  <section>
+    <div>
+      <router-link >跳转</router-link>
+      <div>{{nodeEvn}}</div>
+      <div>{{vueEvn}}</div>
   </div>
+  <TabBerDate/>
+  </section>
+
 </template>
 
 <script>
+import TabBerDate from '@/components/layouts/TabBerDate'
 export default {
+  components: {
+    TabBerDate
+  },
   computed: {
     nodeEvn() {
       return process.env.NODE_ENV

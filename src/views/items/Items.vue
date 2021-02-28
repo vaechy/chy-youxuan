@@ -9,18 +9,21 @@
       :key="index"
       :listData="item"
     />
+    <TabBerDate/>
   </section>
 </template>
 
 <script>
 import Header from '@/components/common/Header'
 import ItemGoodsBlock from '@/components/common/ItemGoodsBlock'
+import TabBerDate from '@/components/layouts/TabBerDate'
 import { mapGetters } from 'vuex'
 export default {
   name: 'Items',
   components: {
     Header,
-    ItemGoodsBlock
+    ItemGoodsBlock,
+    TabBerDate
   },
   data() {
     return {

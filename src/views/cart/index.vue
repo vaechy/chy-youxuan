@@ -6,12 +6,17 @@
       </div>
       <button class="admin">管理</button>
     </div>
+    <TabBerDate/>
   </section>
 </template>
 
 <script>
+import TabBerDate from '@/components/layouts/TabBerDate'
 export default {
-  name: 'Cart'
+  name: 'Cart',
+  components: {
+    TabBerDate
+  }
 }
 </script>
 

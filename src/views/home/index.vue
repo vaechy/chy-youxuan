@@ -24,6 +24,7 @@
       >
       </Goods>
     </div>
+    <TabBerDate/>
   </section>
 </template>
 
@@ -38,6 +39,7 @@ import HotSales from './HotSales'
 import Endemic from './Endemic'
 import NewSales from './NewSales'
 import Goods from '@/components/common/CategoryGoodsBlock'
+import TabBerDate from '@/components/layouts/TabBerDate'
 export default {
   data() {
     return {
@@ -71,7 +73,8 @@ export default {
     HotSales,
     Endemic,
     NewSales,
-    Goods
+    Goods,
+    TabBerDate
   },
   computed: {
     ...mapGetters(['goods'])

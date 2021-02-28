@@ -1,12 +1,9 @@
 // import axios from 'axios'
 import service from '@/utils/request'
 function getItem(getItem, index) {
-  // axios.get(`http://10.10.10.158:30000/indexPage/item/${index}`).then(res => {
-  //   getItem(res.data[0])
-  // })
   service(
     {
-      url: `/api/indexPage/item/${index}`,
+      url: `/api/items/${index}`,
       method: 'get'
     }
   ).then(res => {

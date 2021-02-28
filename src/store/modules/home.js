@@ -2,8 +2,8 @@ import api from '@/api/home'
 const state = {
   BannerData: [],
   ChannelsList: [],
-  hotProduct: {},
-  endemic: {},
+  hotProduct: [],
+  endemic: [],
   arrival: [],
   goods: [],
   topNavOptions: [
@@ -112,8 +112,13 @@ const getters = {
   hotProduct: state => {
     return state.hotProduct
   },
-  endemic: state => {
-    return state.endemic
+  endemiFore: state => {
+    return state.endemic[0]
+  },
+  endemiList: state => {
+    const endemiFore = [...state.endemic]
+    endemiFore.shift()
+    return endemiFore
   },
   arrival: state => {
     return state.arrival

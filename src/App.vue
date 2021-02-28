@@ -5,7 +5,10 @@
 </template>
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  created() {
+    console.log(this.$route)
+  }
 }
 </script>
 <style lang="scss"></style>

@@ -1,0 +1,12 @@
+@uri = http://192.168.1.3:30000
+###
+GET {{uri}}/indexPage/hotproduct
+###
+###
+GET {{uri}}/indexPage/endemic
+###
+###
+GET {{uri}}/indexPage/categorygoods
+###
+###
+GET {{uri}}/indexPage/item/5
