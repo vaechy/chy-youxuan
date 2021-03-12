@@ -9,4 +9,15 @@ GET {{uri}}/indexPage/endemic
 GET {{uri}}/indexPage/categorygoods
 ###
 ###
-GET {{uri}}/indexPage/item/5
+GET {{uri}}/indexPage/items/5
+###
+###
+POST {{uri}}/user/register HTTP/1.1
+content-type: application/json
+
+{
+    "username":"vaechy",
+    "phone":"18565256868",
+    "password":"19865256868"
+}
+###

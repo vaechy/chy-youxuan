@@ -4,15 +4,20 @@
       <van-icon name="search" />
       <input type="text">
     </div>
-    <div class="search-button">
-      <router-link to="/"><span>取消</span></router-link>
+    <div class="search-button"  @click="onCancel">
+      <span>取</span>
     </div>
   </section>
 </template>
 
 <script>
 export default {
-  name: 'Search'
+  name: 'Search',
+  methods: {
+    onCancel() {
+      console.log(this)
+    }
+  }
 }
 </script>
 

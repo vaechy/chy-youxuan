@@ -13,7 +13,7 @@ export default {
   name: 'VantSearch',
   methods: {
     onCancel() {
-      this.$router.push('./')
+      this.$router.go(-1)
     }
   }
 }

@@ -1,7 +1,6 @@
 <template>
   <section>
     <div>
-      <router-link >跳转</router-link>
       <div>{{nodeEvn}}</div>
       <div>{{vueEvn}}</div>
   </div>

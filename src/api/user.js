@@ -1,32 +1,19 @@
-import api from './index'
+// import api from './index'
+import service from '@/utils/request'
 // axios
-import request from '@/utils/request'
-
-// 登录
-export function login(data) {
-  return request({
-    url: api.Login,
+// 注册
+export function register(data) {
+  return service.request({
+    url: '/api/user/register',
     method: 'post',
     data
   })
 }
-
-// 用户信息 post 方法
-export function getUserInfo(data) {
-  return request({
-    url: api.UserInfo,
+// 登陆
+export function login(data) {
+  return service.request({
+    url: '/api/user/login',
     method: 'post',
-    data,
-    hideloading: true
-  })
-}
-
-// 用户名称 get 方法
-export function getUserName(params) {
-  return request({
-    url: api.UserName,
-    method: 'get',
-    params,
-    hideloading: true
+    data
   })
 }

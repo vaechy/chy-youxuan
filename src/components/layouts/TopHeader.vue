@@ -6,7 +6,7 @@
         <van-icon class="icon-search" name="search" size="0.5rem" />
         <span class="placeholder">搜索商品共有20000好物</span>
       </router-link>
-      <router-link class="login" to="login">登陆</router-link>
+      <router-link class="login" to="/login">登陆</router-link>
     </header>
   </div>
 </template>

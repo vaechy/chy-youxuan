@@ -3,20 +3,25 @@
  * @type { *[] }
  */
 export const constantRouterMap = [
-  //  {
-  //   path: '/',
-  //   component: () => import('@/components/layouts/TabBerDate'),
-  //   redirect: '/home',
-  //   meta: {
-  //     title: '首页',
-  //     keepAlive: false
-  //   },
   {
     path: '/',
+    component: () => import('@/views/login/LoginContainer'),
+    redirect: '/home',
+    // meta: {
+    //   title: '首页',
+    //   keepAlive: false
+    children: [
+      {
+        path: 'login',
+        component: () => import('@/views/login')
+      }
+    ]
+  },
+  {
+    path: '/home',
     name: 'Home',
     component: () => import('@/views/home/index'),
-    meta: { title: '首页', keepAlive: false },
-    children: []
+    meta: { title: '首页', keepAlive: false }
   },
   {
     path: '/item/:index',
@@ -56,5 +61,10 @@ export const constantRouterMap = [
     path: '/search',
     name: 'search',
     component: () => import('@/components/common/VantSearch')
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: () => import('@/views/register')
   }
 ]

@@ -54,5 +54,5 @@ service.interceptors.response.use(
     return Promise.reject(error)
   }
 )
-
+console.dir(service)
 export default service

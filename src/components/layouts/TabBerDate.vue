@@ -1,11 +1,6 @@
 <template>
-  <div class="app-container">
-    <div class="layout-content">
-      <router-view></router-view>
-    </div>
-    <div class="layout-footer">
+  <div class="layout-footer">
       <TabBar :data="tabbars" @change="handleChange" />
-    </div>
   </div>
 </template>
 
@@ -65,4 +60,10 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.layout-content {
+  height: 100%;
+}
+.layout-footer {
+  overflow: hidden;
+}
 </style>

@@ -51,4 +51,7 @@ li {
 a {
   color: #42b983;
 }
+.tabar {
+  overflow: hidden;
+}
 </style>

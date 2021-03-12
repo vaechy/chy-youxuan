@@ -11,4 +11,9 @@ export default {
   }
 }
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+#app {
+  height: 667px;
+  background-color: $white;
+}
+</style>
